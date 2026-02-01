@@ -1,0 +1,272 @@
+
+cr_.png
+size: 1857,1537
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bag
+  rotate: false
+  xy: 1656, 129
+  size: 81, 74
+  orig: 83, 76
+  offset: 1, 1
+  index: -1
+bangs l
+  rotate: false
+  xy: 1172, 155
+  size: 183, 353
+  orig: 183, 353
+  offset: 0, 0
+  index: -1
+bangs l(l)
+  rotate: true
+  xy: 543, 4
+  size: 165, 353
+  orig: 165, 353
+  offset: 0, 0
+  index: -1
+bangs r
+  rotate: false
+  xy: 1528, 1198
+  size: 290, 337
+  orig: 290, 337
+  offset: 0, 0
+  index: -1
+bangs r(l)
+  rotate: false
+  xy: 543, 171
+  size: 348, 338
+  orig: 348, 339
+  offset: 0, 0
+  index: -1
+clothes
+  rotate: true
+  xy: 1411, 813
+  size: 277, 271
+  orig: 277, 272
+  offset: 0, 0
+  index: -1
+clothes()
+  rotate: false
+  xy: 893, 236
+  size: 277, 272
+  orig: 277, 272
+  offset: 0, 0
+  index: -1
+clothes2(l)
+  rotate: true
+  xy: 1155, 2
+  size: 151, 204
+  orig: 1026, 1026
+  offset: 506, 227
+  index: -1
+eye plot
+  rotate: true
+  xy: 1656, 205
+  size: 12, 24
+  orig: 1026, 1026
+  offset: 479, 504
+  index: -1
+spot()
+  rotate: true
+  xy: 1656, 205
+  size: 12, 24
+  orig: 1026, 1026
+  offset: 517, 510
+  index: -1
+eye1
+  rotate: false
+  xy: 1706, 1084
+  size: 127, 112
+  orig: 1026, 1026
+  offset: 401, 465
+  index: -1
+eye1()
+  rotate: false
+  xy: 1537, 13
+  size: 79, 107
+  orig: 1026, 1026
+  offset: 507, 480
+  index: -1
+eye2
+  rotate: false
+  xy: 416, 20
+  size: 118, 50
+  orig: 1026, 1026
+  offset: 416, 503
+  index: -1
+eye2()
+  rotate: false
+  xy: 287, 14
+  size: 127, 56
+  orig: 1026, 1026
+  offset: 476, 503
+  index: -1
+face
+  rotate: false
+  xy: 1028, 802
+  size: 381, 288
+  orig: 385, 291
+  offset: 3, 1
+  index: -1
+face()
+  rotate: false
+  xy: 1028, 510
+  size: 311, 290
+  orig: 314, 291
+  offset: 3, 0
+  index: -1
+feather1()
+  rotate: false
+  xy: 1684, 890
+  size: 166, 192
+  orig: 1026, 1026
+  offset: 491, 330
+  index: -1
+feather2()
+  rotate: true
+  xy: 1357, 186
+  size: 183, 182
+  orig: 1026, 1026
+  offset: 500, 244
+  index: -1
+feather3()
+  rotate: true
+  xy: 898, 36
+  size: 198, 255
+  orig: 1026, 1026
+  offset: 507, 177
+  index: -1
+hair
+  rotate: false
+  xy: 2, 72
+  size: 539, 437
+  orig: 560, 445
+  offset: 0, 8
+  index: -1
+hair()
+  rotate: false
+  xy: 1028, 1092
+  size: 498, 443
+  orig: 523, 448
+  offset: 0, 5
+  index: -1
+hair_temple l
+  rotate: true
+  xy: 1528, 1103
+  size: 93, 176
+  orig: 93, 176
+  offset: 0, 0
+  index: -1
+hair_temple r
+  rotate: false
+  xy: 1705, 715
+  size: 112, 173
+  orig: 112, 173
+  offset: 0, 0
+  index: -1
+horn
+  rotate: true
+  xy: 1361, 5
+  size: 179, 174
+  orig: 181, 176
+  offset: 1, 1
+  index: -1
+horn(l)
+  rotate: false
+  xy: 1535, 396
+  size: 161, 201
+  orig: 164, 203
+  offset: 2, 1
+  index: -1
+leg l
+  rotate: true
+  xy: 1705, 607
+  size: 54, 148
+  orig: 57, 151
+  offset: 1, 1
+  index: -1
+leg2()
+  rotate: true
+  xy: 1705, 663
+  size: 50, 150
+  orig: 52, 153
+  offset: 1, 1
+  index: -1
+leg l()
+  rotate: true
+  xy: 1705, 663
+  size: 50, 150
+  orig: 52, 153
+  offset: 1, 1
+  index: -1
+legr
+  rotate: true
+  xy: 2, 15
+  size: 55, 148
+  orig: 57, 151
+  offset: 1, 1
+  index: -1
+plant
+  rotate: false
+  xy: 1698, 393
+  size: 157, 204
+  orig: 178, 204
+  offset: 19, 0
+  index: -1
+plant()
+  rotate: false
+  xy: 1357, 371
+  size: 176, 203
+  orig: 1026, 1026
+  offset: 689, 309
+  index: -1
+saber
+  rotate: true
+  xy: 152, 2
+  size: 68, 133
+  orig: 68, 134
+  offset: 0, 0
+  index: -1
+temple(l)
+  rotate: false
+  xy: 1541, 219
+  size: 150, 175
+  orig: 158, 175
+  offset: 0, 0
+  index: -1
+图层 10
+  rotate: false
+  xy: 1341, 576
+  size: 192, 224
+  orig: 1026, 1026
+  offset: 346, 228
+  index: -1
+图层 21
+  rotate: true
+  xy: 1693, 205
+  size: 186, 162
+  orig: 1026, 1026
+  offset: 341, 200
+  index: -1
+图层 22
+  rotate: true
+  xy: 1535, 599
+  size: 212, 168
+  orig: 1026, 1026
+  offset: 309, 153
+  index: -1
+图层 23
+  rotate: true
+  xy: 1541, 122
+  size: 95, 113
+  orig: 1026, 1026
+  offset: 449, 344
+  index: -1
+背景
+  rotate: false
+  xy: 2, 511
+  size: 1024, 1024
+  orig: 1026, 1026
+  offset: 1, 1
+  index: -1
