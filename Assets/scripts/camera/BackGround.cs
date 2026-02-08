@@ -19,7 +19,7 @@ public class BackGround : MonoBehaviour//·Ö²ã¾í¶¯
         transform.position = new Vector3(target.position.x, target.position.y, target.position.z);
         Vector2 distance = new Vector2 (transform.position.x - LastPos.x,transform.position.y - LastPos.y);//Î»ÒÆ²î
         
-        FarBackGround.position += new Vector3(distance.x * 0.9f, distance.y * 0.9f, 0f);
+        FarBackGround.position += new Vector3(distance.x * 1.0f, distance.y * 1.0f, 0f);
         MidBackGround.position += new Vector3(distance.x * 0.7f, distance.y * 0.7f, 0f);
         NearBackGround.position += new Vector3(distance.x * 0.3f, distance.y * 0.3f, 0f);
 

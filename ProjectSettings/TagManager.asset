@@ -10,6 +10,7 @@ TagManager:
   - checkpoint
   - Card_DoubleJump
   - camera
+  - MapEdge
   layers:
   - Default
   - TransparentFX
