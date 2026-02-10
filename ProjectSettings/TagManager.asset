@@ -2,20 +2,26 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 3
+  serializedVersion: 2
   tags:
-  - cherry
-  - trap
-  - npc
-  - checkpoint
-  - Card_DoubleJump
-  - camera
-  - MapEdge
+  - NumberCard
+  - TargetCard
+  - ElementCard
+  - target
+  - number
+  - element
+  - Enemy
+  - Many
+  - MultipleCard
+  - live
+  - dirty
+  - clear
+  - function
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
   - 
@@ -48,5 +54,3 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  m_RenderingLayers:
-  - Default
