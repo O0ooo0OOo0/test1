@@ -52,7 +52,7 @@ public class PlayerMove : MonoBehaviour
     {
         //左右移动
         xInput = Input.GetAxisRaw("Horizontal");
-
+        
         float LastVelocityX = xInput * (moveSpeed + 5 * platformVelocity.x);
 
         Debug.Log(platformVelocity.x);
