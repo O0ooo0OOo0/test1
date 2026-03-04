@@ -17,7 +17,7 @@ public class Collect : MonoBehaviour
         {
             Destroy(collision.gameObject);
             cherry++;
-            cherryText.text = "cherry" + cherry;
+            cherryText.text = "集卡：" + cherry;
 
         }
 
@@ -32,11 +32,11 @@ public class Collect : MonoBehaviour
         }
 
         // 战斗
-        if (collision.gameObject.CompareTag("npc"))//如果碰到敌人标签的物体
-        {
+        //if (collision.gameObject.CompareTag("npc"))//如果碰到敌人标签的物体
+        //{
             // 切换到战斗场景
-            SceneManager.LoadScene(2);
-        }
+         //   SceneManager.LoadScene(2);
+        //}
 
 
     }

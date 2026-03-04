@@ -25,9 +25,12 @@ public class Life : MonoBehaviour
     private void Die()
     {
         anim.SetTrigger("die");
+        
+        
+
         rb.bodyType = RigidbodyType2D.Static;
-     
-      
+        Restart();
+
     }
 
    
