@@ -17,11 +17,14 @@ public class PlayerMove : MonoBehaviour
 
     private bool isRunScript;
 
+    private PlayerDash playerDash;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        playerDash = GetComponent<PlayerDash>();
     }
 
 
@@ -48,9 +51,13 @@ public class PlayerMove : MonoBehaviour
         anim.SetBool("isRun", isRunScript);//设置布尔类型数值为
     }
 
+    //左右移动
     private void Xmove()
     {
-        //左右移动
+        // 如果正在冲刺，则跳过移动逻辑，让冲刺脚本控制速度
+        if (playerDash != null && playerDash.IsDashing)
+            return;
+
         xInput = Input.GetAxisRaw("Horizontal");
         
         float LastVelocityX = xInput * (moveSpeed + 5 * platformVelocity.x);
@@ -60,6 +67,12 @@ public class PlayerMove : MonoBehaviour
         rb.velocity = new Vector2( LastVelocityX, rb.velocity.y);
 
     }
+
+
+
+
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         

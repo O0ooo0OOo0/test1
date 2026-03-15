@@ -49,6 +49,10 @@ public class playerjump : MonoBehaviour
         {
             //Debug.Log("holddd");
         }
+        if ( isGround)
+        {
+            DoubleJump = true;
+        }
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
         {
