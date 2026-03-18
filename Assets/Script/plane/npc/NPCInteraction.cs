@@ -64,7 +64,7 @@ public class NPCInteraction : MonoBehaviour
 
         private void Update()
     {
-        if (player == null || 
+           if (player == null || 
             dialogManager == null || 
             interactPrompt == null || 
             mainCamera == null || 

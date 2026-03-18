@@ -1,0 +1,200 @@
+{
+  "dialogs": [
+
+
+{
+      "id": "dialog_tagunpc_1",
+      "npcName": "热心塔沽居民",
+      "sentences": [
+        {
+          "text": "你好啊，镇里好久没看到新面孔了",
+          "autoNext": false,
+          "nextId": ""
+        },
+        {
+          "text": "你可以给我三个苹果吗？",
+          "autoNext": false,
+          "nextId": "choice_apple"
+        }
+      ]
+    },
+      {
+      "id": "choice_apple",
+      "npcName": "热心塔沽居民",
+      "isChoice": true,
+      "choices": [
+        {
+          "text": "呃...好的",
+          "nextId": "dialog_tagunpc_1_a"
+        },
+        {
+          "text": "...",
+          "nextId": ""
+        }
+      ]
+    },
+
+    {
+      "id": "dialog_tagunpc_1_a",
+      "npcName": "热心塔沽居民",
+      "sentences": [
+        {
+          "text": "太好了",
+          "autoNext": false,
+          "nextId": ""
+        }
+      ],
+      "isChoice": false,
+      "choices": []
+    },
+    {
+      "id": "dialog_tagunpc_1_repeat",
+      "npcName": "热心塔沽居民",
+      "sentences": [
+        {
+          "text": "请把苹果给我吧",
+          "autoNext": false,
+          "nextId": "dialog_tagunpc_1_repeat_2"
+        }
+      ]
+    },
+
+      {
+      "id": "dialog_tagunpc_1_repeat_2",
+      "npcName": "热心塔沽居民",
+      "isChoice": true,
+      "choices": [
+        {
+          "text": "（看来需要找三个苹果）",
+          "nextId": ""
+        }
+      ]
+    },
+
+
+
+
+
+    {
+      "id": "dialog_1",
+      "npcName": "神秘的老人",
+      "sentences": [
+        {
+          "text": "尊敬的灵神大人啊，您终于复苏了，求您救救我们的土地吧！",
+          "autoNext": false,
+          "nextId": "dialog_2"
+        }
+      ]
+    },
+    {
+      "id": "dialog_2",
+      "npcName": "你",
+      "sentences": [
+        {
+          "text": "？这家伙说什么呢",
+          "autoNext": false,
+          "nextId": "dialog_3"
+        }
+      ]
+    },
+    {
+      "id": "dialog_3",
+      "npcName": "村长",
+      "sentences": [
+        {
+          "text": "我是这里的村长。",
+          "autoNext": false,
+          "nextId": ""
+        },
+        {
+          "text": "您就是我们的灵神大人啊。",
+          "autoNext": false,
+          "nextId": ""
+        },
+        {
+          "text": "我们恳求您救救我们的土地。",
+          "autoNext": false,
+          "nextId": "choice_help"
+        }
+      ]
+    },
+    {
+      "id": "choice_help",
+      "npcName": "村长",
+      "isChoice": true,
+      "choices": [
+        {
+          "text": "好，我试试看。",
+          "nextId": "player_response_1"
+        },
+        {
+          "text": "...",
+          "nextId": "player_response_2"
+        }
+      ]
+    },
+    {
+      "id": "player_response_1",
+      "npcName": "村长",
+      "isChoice": true,
+      "choices": [
+        {
+          "text": "可是我似乎感受不到你们所说的力量。",
+          "nextId": "player_response_1_1"
+        }
+      ]
+    },
+    {
+      "id": "player_response_2",
+      "npcName": "村长",
+      "isChoice": true,
+      "choices": [
+        {
+          "text": "(不知为何开不了口...)",
+          "nextId": "player_response_2_1"
+        }
+      ]
+    },
+    {
+      "id": "player_response_2_1",
+      "npcName": "村长",
+      "isChoice": true,
+      "choices": [
+        {
+          "text": "(好，我试试看。)",
+          "nextId": "player_response_1"
+        }
+      ]
+    },
+    {
+      "id": "player_response_1_1",
+      "npcName": "村长",
+      "sentences": [
+        {
+          "text": "或许是灵神大人的力量受到了干扰。",
+          "autoNext": false,
+          "nextId": ""
+        },
+        {
+          "text": "请试试这个",
+          "autoNext": false,
+          "nextId": ""
+        }
+      ]
+    },
+    {
+      "id": "dialog_1_repeat",
+      "npcName": "村长",
+      "sentences": [
+        {
+          "text": "灵神保佑...",
+          "autoNext": false,
+          "nextId": ""
+        }
+      ]
+    }
+    
+   
+    
+  ]
+}
