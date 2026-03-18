@@ -40,7 +40,7 @@ public class playerjump : MonoBehaviour
         //光线投射检测地面
         isGround = Physics2D.Raycast(transform.position, Vector2.down, 1.1f, GroundLayer);
         anim.SetBool("isGround", isGround);
-        //自身位置，乡下投射，1.1，
+        //自身位置，向下投射，1.1，
     }
 
     private void Jump()
