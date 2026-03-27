@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8669886321009415792}
   - component: {fileID: 4016624781457042088}
   - component: {fileID: 1786783781688686745}
+  - component: {fileID: 6718108594475342255}
   m_Layer: 0
   m_Name: ice
   m_TagString: Untagged
@@ -158,7 +159,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3810316790282000416}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66308ca15bd233c449666ba36efa31c4, type: 3}
   m_Name: 
@@ -287,3 +288,23 @@ CapsuleCollider2D:
   m_Offset: {x: -0.010141406, y: 0.006761055}
   m_Size: {x: 0.4271715, y: 0.6656294}
   m_Direction: 0
+--- !u!114 &6718108594475342255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810316790282000416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935dd90ab5138e54a97d68c760c76e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  bounceFactor: 0.8
+  maxBounces: 3
