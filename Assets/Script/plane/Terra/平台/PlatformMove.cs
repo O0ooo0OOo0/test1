@@ -13,7 +13,7 @@ public class PlatformMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // 计算平台速度
         platformVelocity = MoveSpeed * transform.right;
@@ -33,48 +33,25 @@ public class PlatformMove : MonoBehaviour
             MovePos = Pos2;
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, MovePos.position, MoveSpeed * Time.deltaTime);//来回慢慢移动
+        // 修复：FixedUpdate 中应该用 Time.fixedDeltaTime
+        transform.position = Vector2.MoveTowards(transform.position, MovePos.position, MoveSpeed * Time.fixedDeltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //碰到碰撞器时运行
-        Debug.Log("inPlatform");
+        Debug.Log("碰撞到: " + collision.gameObject.name);
 
-        //如果player碰到它
-        //变为这个触发器的子物体
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.parent = this.transform;
-            // 获取PlayerMove组件
-            PlayerMove playerMove = collision.GetComponent<PlayerMove>();
-            if (playerMove != null)
-            {
-                Debug.Log(" 将平台速度传递给角色");
-            
-                // 将平台速度传递给角色
-                playerMove.platformVelocity = platformVelocity;
-            }
+            collision.transform.SetParent(this.transform);
         }
-
-
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        Debug.Log("离开");
-
-        //如果player碰到它
-
-        //变为这个触发器的子物体
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.parent = null;
-            PlayerMove playerMove = collision.GetComponent<PlayerMove>();
-            if (playerMove != null)
-            {
-                playerMove.platformVelocity = Vector2.zero;
-            }
+            collision.transform.SetParent(null);
         }
     }
 }

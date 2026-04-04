@@ -10,10 +10,10 @@ public class rebound : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-            playerjump playerJumpScript = collision.gameObject.GetComponent<playerjump>(); // 修正变量名
+           // playerjump playerJumpScript = collision.gameObject.GetComponent<playerjump>(); // 修正变量名
 
             //标记
-            playerJumpScript.isOnReboundPlatform = true;
+            //playerJumpScript.isOnReboundPlatform = true;
 
             // 获取当前速度
             Vector2 currentVelocity = rb.velocity;
@@ -31,7 +31,7 @@ public class rebound : MonoBehaviour
 
             // GetComponent<AudioSource>()?.Play();
             // 延迟恢复重力修改
-            StartCoroutine(ResetGravity(playerJumpScript));
+            //StartCoroutine(ResetGravity(playerJumpScript));
 
         }
 

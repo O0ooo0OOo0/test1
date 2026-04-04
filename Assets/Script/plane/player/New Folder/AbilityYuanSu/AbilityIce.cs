@@ -12,9 +12,60 @@ public class IceAbility : AbilityBase
 
     public override string AbilityName => "Ice";
 
+    private AbilityManage abilityManage;
+    private bool isAbilityUnlocked = false;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        // 查找 AbilityManage
+        abilityManage = GetComponent<AbilityManage>();
+        if (abilityManage == null)
+        {
+            abilityManage = FindObjectOfType<AbilityManage>();
+        }
+    }
+
+    void Start()
+    {
+        // 初始检查能力是否解锁
+        CheckUnlockStatus();
+    }
+
+    protected override void Update()
+    {
+        // 先检查能力是否解锁
+        CheckUnlockStatus();
+
+        // 如果能力未解锁，不处理输入
+        if (!isAbilityUnlocked) return;
+
+        // 更新冷却
+        UpdateCooldown();
+
+        // 检查输入（使用基类的逻辑）
+        CheckInput();
+    }
+
+    void CheckUnlockStatus()
+    {
+        if (abilityManage != null)
+        {
+            isAbilityUnlocked = abilityManage.hasIceAbility;
+
+            // 如果能力被禁用，重置冷却状态
+            if (!isAbilityUnlocked)
+            {
+                isAvailable = true;
+                nextUseTime = 0;
+            }
+        }
+    }
+
     protected override void CheckInput()
     {
-        if (Input.GetKeyDown(activationKey) && CanUse)
+        if (isAbilityUnlocked && Input.GetKeyDown(activationKey) && CanUse)
         {
             Use();
         }
@@ -39,6 +90,7 @@ public class IceAbility : AbilityBase
             iceScript.Initialize(transform, maxThrowDistance, iceDuration);
     }
 
+
     Vector2 GetThrowDirection()
     {
         // 优先使用输入方向
@@ -48,6 +100,20 @@ public class IceAbility : AbilityBase
         // 否则使用面向方向
         return playerState.GetFacingDirection();
     }
-}
 
-// FireAbility.cs - 类似结构
+    // 公开方法，供卡牌系统动态设置按键
+    public void SetActivationKey(KeyCode newKey)
+    {
+        activationKey = newKey;
+    }
+    // 公开方法，供卡牌系统动态启用/禁用
+    public void SetUnlocked(bool unlocked)
+    {
+        isAbilityUnlocked = unlocked;
+        if (!unlocked)
+        {
+            isAvailable = true;
+            nextUseTime = 0;
+        }
+    }
+}

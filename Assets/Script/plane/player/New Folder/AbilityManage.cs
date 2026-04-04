@@ -1,12 +1,12 @@
-// AbilityManager.cs - ¹ÜÀíËùÓĞÄÜÁ¦
+ï»¿// AbilityManager.cs - ç®¡ç†æ‰€æœ‰èƒ½åŠ›
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AbilityManage : MonoBehaviour
 {
-    [Header("¿¨ÅÆÄÜÁ¦ÅäÖÃ")]
-    public bool hasDoubleJump = true;
-    public bool hasDash = true;
+    [Header("å¡ç‰Œèƒ½åŠ›é…ç½®")]
+    public bool hasDoubleJump = false;
+    public bool hasDash = false;
     public bool hasGlide = false;
     public bool hasIceAbility = false;
     public bool hasFireAbility = false;
@@ -15,23 +15,24 @@ public class AbilityManage : MonoBehaviour
 
     void Awake()
     {
-        // ×Ô¶¯×¢²áËùÓĞÄÜÁ¦×é¼ş
+        // è‡ªåŠ¨æ³¨å†Œæ‰€æœ‰èƒ½åŠ›ç»„ä»¶
         var allAbilities = GetComponents<AbilityBase>();
         foreach (var ability in allAbilities)
         {
             abilities[ability.GetType()] = ability;
-
-            // ¸ù¾İ¿¨ÅÆÅäÖÃÆôÓÃ/½ûÓÃÄÜÁ¦
+            // æ ¹æ®å¡ç‰Œé…ç½®å¯ç”¨/ç¦ç”¨èƒ½åŠ›
             if (ability is JumpAbility jump)
-                jump.hasDoubleJumpCard = hasDoubleJump;
+                jump.enabled = true;  // åŸºç¡€è·³è·ƒå§‹ç»ˆå¯ç”¨
+            else if (ability is DoubleJumpAbility doubleJump)
+                doubleJump.enabled = hasDoubleJump;  // äºŒæ®µè·³æ ¹æ®é…ç½®
             else if (ability is DashAbility dash)
                 dash.enabled = hasDash;
-            //else if (ability is GlideAbility glide)
-             //   glide.enabled = hasGlide;
+            else if (ability is GlideAbility glide)
+                glide.enabled = hasGlide;
             else if (ability is IceAbility ice)
                 ice.enabled = hasIceAbility;
-            //else if (ability is FireAbility fire)
-            //    fire.enabled = hasFireAbility;
+            else if (ability is FireAbility fire)
+                fire.enabled = hasFireAbility;
         }
     }
 
@@ -42,7 +43,7 @@ public class AbilityManage : MonoBehaviour
         return null;
     }
 
-    // ¶¯Ì¬»ñµÃ/Ê§È¥ÄÜÁ¦£¨¿¨ÅÆÇĞ»»£©
+    // åŠ¨æ€è·å¾—/å¤±å»èƒ½åŠ›ï¼ˆå¡ç‰Œåˆ‡æ¢ï¼‰
     public void GrantAbility<T>() where T : AbilityBase
     {
         var ability = GetComponent<T>();
@@ -56,4 +57,68 @@ public class AbilityManage : MonoBehaviour
         if (ability != null)
             ability.enabled = false;
     }
+
+    public bool HasDoubleJump
+    {
+        get => hasDoubleJump;
+        set
+        {
+            hasDoubleJump = value;
+            if (value)
+                GrantAbility<DoubleJumpAbility>();
+            else
+                RemoveAbility<DoubleJumpAbility>();
+        }
+    }
+    public bool HasIceAbility
+    {
+        get => hasIceAbility;
+        set
+        {
+            hasIceAbility = value;
+            if (value)
+                GrantAbility<IceAbility>();
+            else
+                RemoveAbility<IceAbility>();
+        }
+    }
+    public bool HasFireAbility
+    {
+        get => hasFireAbility;
+        set
+        {
+            hasFireAbility = value;
+            if (value)
+                GrantAbility<FireAbility>();
+            else
+                RemoveAbility<FireAbility>();
+        }
+    }
+    public bool HasDash
+    {
+        get => hasDash;
+        set
+        {
+            hasDash = value;
+            if (value)
+                GrantAbility<DashAbility>();
+            else
+                RemoveAbility<DashAbility>();
+        }
+    }
+
+    public bool HasGlide
+    {
+        get => hasGlide;
+        set
+        {
+            hasGlide = value;
+            if (value)
+                GrantAbility<GlideAbility>();
+            else
+                RemoveAbility<GlideAbility>();
+        }
+    }
+
+
 }

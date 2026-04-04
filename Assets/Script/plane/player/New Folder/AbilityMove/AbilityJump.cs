@@ -7,7 +7,7 @@ public class JumpAbility : AbilityBase
     [Header("跳跃配置")]
     public float jumpForce = 12f;
     public float jumpHoldTime = 0.2f; // 延长跳时间
-    public bool hasDoubleJumpCard = false;  // 是否拥有二段跳卡牌（由AbilityManager控制）
+    //public bool hasDoubleJumpCard = false;  // 是否拥有二段跳卡牌（由AbilityManager控制）
 
     [Header("预输入配置")]
     public float jumpBufferTime = 0.15f;  // 预输入窗口时间（秒）
@@ -26,7 +26,7 @@ public class JumpAbility : AbilityBase
 
     private bool isJumpHolding;
     private float jumpHoldTimer;
-    private bool canDoubleJump;  // 二段跳是否可用（落地时重置）
+   // private bool canDoubleJump;  // 二段跳是否可用（落地时重置）
     private bool isOnReboundPlatform;  // ✅ 添加反弹平台支持
     private DashAbility dashAbility;  // ✅ 添加冲刺能力引用
 
@@ -34,7 +34,7 @@ public class JumpAbility : AbilityBase
     private float jumpBufferTimer;  // 预输入计时器
     private bool isJumpBuffered;     // 是否有预输入的跳跃
 
-    private Coroutine forceCoroutine;  // 添加到类变量中
+    private Coroutine forceCoroutine;  // 添加到类变量中????????
     public override string AbilityName => "Jump";
     public bool IsInDashJumpInertia => isInDashJumpInertia;
 
@@ -42,6 +42,7 @@ public class JumpAbility : AbilityBase
     {
         base.Awake();
         dashAbility = GetComponent<DashAbility>();  // ✅ 获取冲刺能力组件
+
     }
 
     void FixedUpdate()
@@ -60,20 +61,6 @@ public class JumpAbility : AbilityBase
                 PerformJump();
                 isJumpBuffered = false;
                 jumpBufferTimer = 0;
-
-                if (hasDoubleJumpCard)
-                {
-                    canDoubleJump = true;
-                }
-                Debug.Log("预输入跳跃触发！");
-            }
-            else
-            {
-                // 落地时重置二段跳
-                if (hasDoubleJumpCard)
-                {
-                    canDoubleJump = true;
-                }
             }
         }
 
@@ -92,8 +79,8 @@ public class JumpAbility : AbilityBase
                 EndJumpHold();
             }
         }
-        // ✅ 重力修改（完全复制原代码逻辑）
-        // 原代码: if(!isJumpScript)  // 没有在跳跃时
+        //  重力修改
+      
         if (!playerState.isJumping)
         {
             if (isOnReboundPlatform)
@@ -108,7 +95,7 @@ public class JumpAbility : AbilityBase
                 rb.velocity -= new Vector2(0, -Physics2D.gravity.y * gravityMultiplier * Time.fixedDeltaTime);
             }
         }
-        // ✅ 更新预输入计时器
+        // 更新预输入计时器
         if (isJumpBuffered)
         {
             jumpBufferTimer -= Time.fixedDeltaTime;
@@ -149,19 +136,8 @@ public class JumpAbility : AbilityBase
         if (playerState.isGrounded)
         {
             PerformJump();
-
-            if (hasDoubleJumpCard)
-            {
-                canDoubleJump = true;
-            }
-
         }
-        // 二段跳
-        else if (hasDoubleJumpCard && canDoubleJump)
-        {
-            PerformJump();
-            canDoubleJump = false;  // 使用后消耗
-        }
+
         // 在空中且不能二段跳时，记录预输入
         else
         {
@@ -242,11 +218,18 @@ public class JumpAbility : AbilityBase
         while (elapsedTime < decayTime && isInDashJumpInertia)
         {
 
-            elapsedTime += Time.deltaTime;
+            //elapsedTime += Time.deltaTime;
 
             // 计算当前应该施加的力（线性衰减）
+            //float t = elapsedTime / decayTime;
+            //currentForce = Mathf.Lerp(initialSpeed, targetForce, t);
+
+            // ✅ 非线性衰减：使用 SmoothStep 曲线（先快后慢）
             float t = elapsedTime / decayTime;
-            currentForce = Mathf.Lerp(initialSpeed, targetForce, t);
+
+            // 方法2：使用指数衰减（更自然的物理感）
+             float exponent = 1 - Mathf.Pow(1 - t, 2);  // 二次曲线
+            currentForce = Mathf.Lerp(initialSpeed, targetForce, exponent);
 
             // 持续施加水平力（保持水平速度）
             rb.velocity = new Vector2(currentForce, rb.velocity.y);

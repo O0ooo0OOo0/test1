@@ -14,7 +14,6 @@ public class GlideAbility : AbilityBase
     private bool isGliding;
     private float originalDrag;
     private float originalGravityScale;
-    private float originalFallSpeed;  // 记录原始下落速度
 
     public override string AbilityName => "Glide";
     public bool IsGliding => isGliding;
@@ -29,6 +28,9 @@ public class GlideAbility : AbilityBase
     protected override void Update()
     {
         base.Update();
+
+        // 只有能力启用时才处理输入
+        if (!enabled) return;
 
         // 检查滑翔输入
         if (Input.GetKey(glideKey) && CanGlide())
@@ -106,11 +108,5 @@ public class GlideAbility : AbilityBase
         EndGlide();
     }
 
-    void OnGUI()
-    {
-        if (Application.isPlaying && playerState != null)
-        {
-            GUI.Label(new Rect(10, 130, 200, 20), $"滑翔中: {isGliding}");
-        }
-    }
+
 }
