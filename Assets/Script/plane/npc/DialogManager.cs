@@ -83,14 +83,6 @@ public class DialogManager : MonoBehaviour
                 foreach (var dialog in dialogList.dialogs)
                 {
                     dialogDictionary[dialog.id] = dialog;
-
-                    // 打印每个加载的对话ID和内容预览
-                    Debug.Log($"加载对话: {dialog.id} - {dialog.npcName} - 句子数: {dialog.sentences?.Count ?? 0}");
-
-                    if (dialog.sentences != null && dialog.sentences.Count > 0)
-                    {
-                        Debug.Log($"  第一句: {dialog.sentences[0].text}");
-                    }
                 }
 
                 Debug.Log($"成功加载 {dialogDictionary.Count} 个对话");
@@ -119,28 +111,8 @@ public class DialogManager : MonoBehaviour
             currentSentenceIndex = 0;
             isDialogActive = true;
 
- 
-
-
-            Debug.Log($"开始对话: {dialogId}");
-            Debug.Log($"dialogPanel 是否为null: {dialogPanel == null}");
-            if (dialogPanel != null)
-            {
-                Debug.Log($"dialogPanel 当前状态: {dialogPanel.activeSelf}");
-                dialogPanel.SetActive(true);
-                Debug.Log($"dialogPanel 设置后状态: {dialogPanel.activeSelf}");
-            }
-            else
-            {
-                Debug.LogError("dialogPanel 为 null！请在Inspector中赋值");
-            }
-            Debug.Log($"npcNameText 是否为null: {npcNameText == null}");
-            if (npcNameText != null)
-            {
-                npcNameText.text = currentDialog.npcName;
-                Debug.Log($"NPC名字设置为: {currentDialog.npcName}");
-            }
             // 显示对话面板
+            dialogPanel.SetActive(true);
             npcNameText.text = currentDialog.npcName;
 
             // 显示第一句
@@ -158,7 +130,6 @@ public class DialogManager : MonoBehaviour
         // 如果是选项对话
         if (currentDialog.isChoice)
         {
-            Debug.Log("是选项对话，调用 ShowChoicePanel");
             ShowChoicePanel();
             return;
         }
@@ -167,8 +138,6 @@ public class DialogManager : MonoBehaviour
         if (currentSentenceIndex < currentDialog.sentences.Count)
         {
             var sentence = currentDialog.sentences[currentSentenceIndex];
-
-            Debug.Log($"显示第 {currentSentenceIndex} 句: '{sentence.text}'");
 
             // 打字效果
             if (typingCoroutine != null)
@@ -184,7 +153,6 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("currentSentenceIndex 超出范围，结束对话");
             EndDialog();
         }
     }
@@ -262,12 +230,6 @@ public class DialogManager : MonoBehaviour
     // 下一句
     public void NextSentence()
     {
-        // 如果是选项对话，直接返回
-        if (currentDialog.isChoice) return;
-
-        // 一行代码解决：如果当前句子正在打字，不执行下一句 
-        if (dialogText.text != currentDialog.sentences[currentSentenceIndex].text) return;
-
         if (!isDialogActive || 
             currentDialog == null || 
             currentDialog.sentences == null ||
@@ -276,30 +238,29 @@ public class DialogManager : MonoBehaviour
 
         // 获取当前句子
         var currentSentence = currentDialog.sentences[currentSentenceIndex];
-
-        // 检查是否是最后一句
-        bool isLastSentence = currentSentenceIndex >= currentDialog.sentences.Count - 1;
-
-        // 1. 优先检查是否有 nextId 跳转 且 是最后一句
-        if (isLastSentence)
+        //条件：如果 nextId 为空 且 是最后一句
+        if (string.IsNullOrEmpty(currentSentence.nextId) &&
+        currentSentenceIndex >= currentDialog.sentences.Count - 1)
         {
-            if (!string.IsNullOrEmpty(currentSentence.nextId))
-            {
-                // 直接跳转到指定的对话ID
-                StartDialog(currentSentence.nextId);
-            }
-            else
-            {
-                // 是最后一句，结束对话
-                EndDialog();
-            }
+            // 是最后一句，直接结束对话
+            EndDialog();
             return;
         }
 
-        // 3. 正常显示下一句
+        // 检查是否有指定跳转
+        if (currentDialog.sentences != null &&
+            currentSentenceIndex < currentDialog.sentences.Count)
+        {
+            
+            if (!string.IsNullOrEmpty(currentSentence.nextId))
+            {
+                StartDialog(currentSentence.nextId);
+                return;
+            }
+        }
+
         currentSentenceIndex++;
         ShowCurrentSentence();
-
     }
 
     // 结束对话
@@ -328,7 +289,7 @@ public class DialogManager : MonoBehaviour
     private void Update()
     {
         // 按F键继续对话
-        if (isDialogActive && (Input.GetKeyDown(KeyCode.F) || Input.GetMouseButtonDown(0)))
+        if (isDialogActive && Input.GetKeyDown(KeyCode.F))
         {
             NextSentence();
         }

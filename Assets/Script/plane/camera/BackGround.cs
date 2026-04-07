@@ -1,44 +1,28 @@
 using UnityEngine;
-using System.Collections.Generic;
 
-public class ParallaxBackground : MonoBehaviour
+public class BackGround : MonoBehaviour//分层卷动
 {
-    [System.Serializable]
-    public class Layer
-    {
-        public Transform bg;        // 背景物体
-        public float ratio = 1f;    // 移动比例
-        public bool reverse = false; // 反向移动
-    }
 
-    public Transform target;        // 跟随目标
-    public List<Layer> layers = new List<Layer>();
+    public Transform target;//玩家位置
+    public Transform MidBackGround, FarBackGround, NearBackGround;
+    private Vector2 LastPos;//上一个相机位置
 
-    private Vector2 lastPos;
 
     void Start()
     {
-        lastPos = target.position;
+        LastPos = transform.position;
     }
 
+    // Update is called once per frame
     void Update()
     {
-        // 计算移动距离
-        Vector2 delta = (Vector2)target.position - lastPos;
+        transform.position = new Vector3(target.position.x, target.position.y, target.position.z);
+        Vector2 distance = new Vector2 (transform.position.x - LastPos.x,transform.position.y - LastPos.y);//位移差
+        
+        FarBackGround.position += new Vector3(distance.x * 1.0f, distance.y * 1.0f, 0f);
+        MidBackGround.position += new Vector3(distance.x * 0.7f, distance.y * 0.7f, 0f);
+        NearBackGround.position += new Vector3(distance.x * 0.3f, distance.y * 0.3f, 0f);
 
-        // 更新每个背景层
-        foreach (Layer layer in layers)
-        {
-            if (layer.bg == null) continue;
-
-            float speed = layer.reverse ? -layer.ratio : layer.ratio;
-            Vector3 move = new Vector3(delta.x * speed, delta.y * speed, 0);
-            layer.bg.position += move;
-        }
-
-        // 更新相机跟随
-        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
-
-        lastPos = target.position;
+        LastPos = transform.position;
     }
 }

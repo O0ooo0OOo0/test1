@@ -10,10 +10,7 @@ public class EnemyHPManager : MonoBehaviour
     public GameObject HP;
     public TMP_Text healthText;
 
-    public int fangyuE;
-    public int gongjiE;
-
-    public DefenseNumber defenseNumber;
+    public DefenseManager defense;   
 
     private void Start()
     {
@@ -25,17 +22,29 @@ public class EnemyHPManager : MonoBehaviour
     // 受到伤害
     public void TakeDamage(int amount)
     {
-        defenseNumber.RemoveDefense(amount);
+        defense.RemoveDefense(amount);   // 优先使用防御抵挡攻击
 
-        if (defenseNumber.redundant > 0)
+        if (defense.redundant > 0)
         {
-            currentHealth = currentHealth - defenseNumber.redundant;
+            currentHealth = currentHealth - defense.redundant;
             currentHealth = Mathf.Max(0, currentHealth); // 防止血量小于0
             UpdateHealthBar();
             if (currentHealth == 0)
             {
                 Die();
             }
+        }
+    }
+
+    // 忽略防御直接伤害
+    public void AbsoluteDamage(int count)
+    {
+        currentHealth = currentHealth - count;
+        currentHealth = Mathf.Max(0, currentHealth); // 防止血量小于0
+        UpdateHealthBar();
+        if (currentHealth == 0)
+        {
+            Die();
         }
     }
 
@@ -48,7 +57,7 @@ public class EnemyHPManager : MonoBehaviour
     }
 
     // 更新血量条
-    private void UpdateHealthBar()
+    public void UpdateHealthBar()
     {
         healthText.text = currentHealth + "/" + maxHealth;
         if (healthBar != null)
@@ -60,8 +69,6 @@ public class EnemyHPManager : MonoBehaviour
     // 死亡逻辑
     private void Die()
     {
-        //Debug.Log("Monster is dead!");
-        //Destroy(gameObject); // 销毁怪物对象
         gameObject.SetActive(false);
         HP.SetActive(false);
     }

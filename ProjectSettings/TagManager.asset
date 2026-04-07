@@ -17,21 +17,16 @@ TagManager:
   - dirty
   - clear
   - function
-  - trap
-  - cherry
-  - Card_DoubleJump
-  - 1
-  - camera
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
-  - lava
-  - player
-  - Background
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -56,18 +51,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: background
-    uniqueID: 1613521913
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: player
-    uniqueID: 3755733959
-    locked: 0
-  - name: nearground
-    uniqueID: 184325803
-    locked: 0
-  - name: UI
-    uniqueID: 3610596639
     locked: 0

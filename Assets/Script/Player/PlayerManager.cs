@@ -5,13 +5,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static PlayerManager instance;
+    public static PlayerManager pm;
 
     private void Awake()
     {
-        if (instance == null)
+        if (pm == null)
         {
-            instance = this;
+            pm = this;
             DontDestroyOnLoad(gameObject);
         }
         else

@@ -16,15 +16,15 @@ public class FadeOutToMain : MonoBehaviour
 
     void Start()
     {
-        player = PlayerManager.instance;
+        player = PlayerManager.pm;
         function = player.transform.Find("function");   // player路径下的命名为function的子物体
     }
 
     private void Update()
     {
-        if (function.GetComponent<escManager>().isFadeOut == true)
+        if (function.GetComponent<EscManager>().isFadeOut == true)
         {
-            function.GetComponent<escManager>().isFadeOut = false;
+            function.GetComponent<EscManager>().isFadeOut = false;
             StartCoroutine(ExitSceneToMain());
         }
     }

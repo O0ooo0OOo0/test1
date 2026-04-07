@@ -5,34 +5,34 @@ using TMPro;
 
 public class DialogueTextController : MonoBehaviour
 {
-    public TMP_Text textMeshPro; 
-    public float maxWidth = 1085.01f; 
+    public TMP_Text text; 
+    public float maxWidth = 1085.01f;
 
     private void Update()
     {
-        if (textMeshPro != null)
+        if (text != null)
         {
-            string text = textMeshPro.text;
-            if (string.IsNullOrEmpty(text))
+            string textT = text.text;
+            if (string.IsNullOrEmpty(textT))
             {
                 return;
             }
 
-            int lineCount = text.Split('\n').Length;
+            int lineCount = textT.Split('\n').Length;
 
             for (int i = 0; i < lineCount; i++)
             {
-                string currentLine = text.Split('\n')[i];
-                if (textMeshPro.GetPreferredValues(currentLine).x > maxWidth)
+                string currentLine = textT.Split('\n')[i];
+                if (text.GetPreferredValues(currentLine).x > maxWidth)
                 {
                     int wrapIndex = FindWrapIndex(currentLine, maxWidth);
                     if (wrapIndex > 0)
                     {
-                        text = text.Insert(text.IndexOf(currentLine) + wrapIndex, "\n");
+                        textT = textT.Insert(textT.IndexOf(currentLine) + wrapIndex, "\n");
                     }
                 }
             }
-            textMeshPro.text = text;
+            text.text = textT;
         }
     }
 
@@ -43,7 +43,7 @@ public class DialogueTextController : MonoBehaviour
         for (int i = 0; i < line.Length; i++)
         {
             string substring = line.Substring(0, i + 1);
-            if (textMeshPro.GetPreferredValues(substring).x > maxWidth)
+            if (text.GetPreferredValues(substring).x > maxWidth)
             {
                 wrapIndex = i - 1;
                 if (wrapIndex > 0)

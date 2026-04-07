@@ -14,6 +14,6 @@ public class CoinsAmount : MonoBehaviour
 
     public void AmountCoins()
     {
-        coinsText.text = PersistentObject.instance.coins.ToString();
+        coinsText.text = ArchiveGameManager.arcm.arcsInf[ArchiveGameManager.arcm.currentArcIndex].coins.ToString();
     }
 }

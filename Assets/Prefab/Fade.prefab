@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3860484459116787203}
   - component: {fileID: 4681931787315644194}
   - component: {fileID: 4152721003962578585}
+  - component: {fileID: 4843335205694596014}
+  - component: {fileID: 705449736930793612}
   m_Layer: 0
   m_Name: Fade
   m_TagString: Untagged
@@ -102,6 +104,34 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4843335205694596014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141927266183677968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a105b73b2616b094cb73cda9144a884a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeIn: {fileID: 5191223864168892077}
+  fadeInSpeed: 1.5
+--- !u!114 &705449736930793612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141927266183677968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448b0834f27ba0140beac69fa408ae03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOut: {fileID: 5191223864168892077}
+  fadeOutSpeed: 1.8
 --- !u!1 &5191223864168892077
 GameObject:
   m_ObjectHideFlags: 0
