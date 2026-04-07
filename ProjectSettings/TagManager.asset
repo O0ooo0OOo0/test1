@@ -17,6 +17,9 @@ TagManager:
   - dirty
   - clear
   - function
+  - trap
+  - cherry
+  - Card_DoubleJump
   layers:
   - Default
   - TransparentFX
@@ -24,9 +27,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Ground
+  - Background
+  - Lava
   - 
   - 
   - 
@@ -51,6 +54,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1871353011
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: NearGround
+    uniqueID: 3857702705
     locked: 0

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using System;
 using System.Reflection;
 using GameFramework.Samples.Localization;
-using Unity.Android.Gradle;
+//using Unity.Android.Gradle;
 
 public class ForgingDialogManager : MonoBehaviour
 {

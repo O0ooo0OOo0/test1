@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2004083729199757539}
   - component: {fileID: 4396032748124131355}
   - component: {fileID: 2358554290291466293}
+  - component: {fileID: 7876315106017792396}
   m_Layer: 0
   m_Name: "\u5B58\u6863"
   m_TagString: Untagged
@@ -144,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af4c97960cf053044a4f81fbf0d86ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactKey: 102
 --- !u!114 &2358554290291466293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,3 +160,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPlatform: {fileID: 9203459051570736206}
   newCameraBound: {fileID: 0}
+--- !u!114 &7876315106017792396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8439640479391166870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6320b21301a8a824384f1d8c8d095e35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactPrompt: {fileID: 0}
+  promptOffset: {x: 0, y: 2, z: 0}
+  fadeInDuration: 0.3
+  fadeOutDuration: 0.5

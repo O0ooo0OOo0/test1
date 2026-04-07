@@ -53,6 +53,7 @@ public class IceCubeBehavior : MonoBehaviour
         // 碰到敌人：销毁冰块
         if (IsInLayerMask(collision.gameObject, enemyLayer))
         {
+            Destroy(collision.gameObject);  // 销毁敌人
             Destroy(gameObject);
             return;
         }

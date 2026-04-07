@@ -248,10 +248,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   lavaLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   bounceFactor: 0.8
   maxBounces: 3
   enableShrink: 1
