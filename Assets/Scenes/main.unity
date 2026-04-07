@@ -287,16 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b623d1aa44a47449179b6e95308c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pages:
-  - changePage: {fileID: 1999343655}
-    page: {fileID: 1021952240}
-    labelPage: {fileID: 1091975859}
-  - changePage: {fileID: 1964281346}
-    page: {fileID: 865495981}
-    labelPage: {fileID: 1751883626}
-  - changePage: {fileID: 908143469}
-    page: {fileID: 256491207}
-    labelPage: {fileID: 1561660863}
 --- !u!114 &7272672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3907,74 +3897,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a122824124d3c534fa7fa48f7239236d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noObtainText: {fileID: 608639391}
-  cardsInf:
-  - cardIndex: 0
-    cardButton: {fileID: 1246864180}
-    isObtain: 0
-    ques: {fileID: 1040334641}
-    cardText: {fileID: 1318550822}
-    cardSign: {fileID: 1172754312}
-  - cardIndex: 1
-    cardButton: {fileID: 978961670}
-    isObtain: 0
-    ques: {fileID: 997753857}
-    cardText: {fileID: 2062808456}
-    cardSign: {fileID: 579828047}
-  - cardIndex: 2
-    cardButton: {fileID: 695888395}
-    isObtain: 0
-    ques: {fileID: 441907499}
-    cardText: {fileID: 1924284956}
-    cardSign: {fileID: 1383961697}
-  - cardIndex: 3
-    cardButton: {fileID: 1063129286}
-    isObtain: 0
-    ques: {fileID: 1452427573}
-    cardText: {fileID: 934305687}
-    cardSign: {fileID: 623080416}
-  - cardIndex: 4
-    cardButton: {fileID: 1236740598}
-    isObtain: 0
-    ques: {fileID: 417575820}
-    cardText: {fileID: 153986379}
-    cardSign: {fileID: 1701319714}
-  - cardIndex: 5
-    cardButton: {fileID: 1030081194}
-    isObtain: 0
-    ques: {fileID: 440887553}
-    cardText: {fileID: 509593037}
-    cardSign: {fileID: 640341268}
-  - cardIndex: 6
-    cardButton: {fileID: 1518966651}
-    isObtain: 0
-    ques: {fileID: 370885246}
-    cardText: {fileID: 1567368648}
-    cardSign: {fileID: 641348207}
-  - cardIndex: 7
-    cardButton: {fileID: 1160144683}
-    isObtain: 0
-    ques: {fileID: 81748936}
-    cardText: {fileID: 898000780}
-    cardSign: {fileID: 415963151}
-  - cardIndex: 8
-    cardButton: {fileID: 1700905253}
-    isObtain: 0
-    ques: {fileID: 1723208319}
-    cardText: {fileID: 599132241}
-    cardSign: {fileID: 1088453687}
-  - cardIndex: 9
-    cardButton: {fileID: 2064467246}
-    isObtain: 0
-    ques: {fileID: 305525375}
-    cardText: {fileID: 192391066}
-    cardSign: {fileID: 1414171471}
-  - cardIndex: 10
-    cardButton: {fileID: 1195938707}
-    isObtain: 0
-    ques: {fileID: 500174556}
-    cardText: {fileID: 1037047775}
-    cardSign: {fileID: 1715150495}
 --- !u!1 &88301798
 GameObject:
   m_ObjectHideFlags: 0
@@ -6462,29 +6384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dcceee3f04ca14bb1ded5e66d49650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  askButtons:
-  - {fileID: 797104878}
-  - {fileID: 1629674518}
-  - {fileID: 1392755724}
-  - {fileID: 1158823364}
-  - {fileID: 391695345}
-  answers:
-  - {fileID: 1467099809}
-  - {fileID: 804590525}
-  - {fileID: 979542219}
-  - {fileID: 1410921606}
-  - {fileID: 1133997291}
-  tips:
-  - {fileID: 193094536}
-  - {fileID: 11572516}
-  - {fileID: 226475451}
-  - {fileID: 863552810}
-  - {fileID: 1835134511}
-  - {fileID: 418211308}
-  isAsked: 0
-  isCombatScene: 0
-  fpM: {fileID: 127057178}
-  shopManager: {fileID: 127057179}
 --- !u!114 &127057177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6497,14 +6396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52a068078fcbba4b8f4023d6d34ab57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cancelInput: {fileID: 2123513474}
-  inputContent: {fileID: 643484966}
-  inputMaterials:
-  - {fileID: 1005138395}
-  - {fileID: 760717358}
-  - {fileID: 1738071882}
-  - {fileID: 1590790717}
-  - {fileID: 219423728}
 --- !u!114 &127057178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6517,41 +6408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c005427bf1d5ce143863a3b58742faf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputMaterials:
-  - {fileID: 1005138395}
-  - {fileID: 760717358}
-  - {fileID: 1738071882}
-  - {fileID: 1590790717}
-  - {fileID: 219423728}
-  products:
-  - {fileID: 165516021}
-  - {fileID: 842483190}
-  - {fileID: 339861962}
-  - {fileID: 386364025}
-  - {fileID: 1980453215}
-  - {fileID: 1863173960}
-  - {fileID: 749213406}
-  - {fileID: 1389193663}
-  duanzao: {fileID: 61930323}
-  duanzaoAniTime: 1
-  white: {fileID: 1400849615}
-  fadeInSpeed: 1.5
-  startForging: {fileID: 1039579126}
-  productsPanel: {fileID: 918959197}
-  extraPdtsPanel: {fileID: 1289534805}
-  exPdtsText: {fileID: 334670722}
-  forgCoinsMax: 5
-  inputContent: {fileID: 643484966}
-  isCanForging: 0
-  probability: []
-  extraFgP: 0.2
-  extraTimes: 0
-  isExtraFg: 0
-  fdm: {fileID: 127057176}
-  cancelinput: {fileID: 127057177}
-  mcp: {fileID: 127057180}
-  itemAmount: {fileID: 1212615703}
-  cardsBagAmount: {fileID: 7272672}
 --- !u!114 &127057179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6607,9 +6463,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7c3ffa9a1249f4c8c5be5c34f6c183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sureProducts: {fileID: 282781743}
-  productsPanel: {fileID: 918959197}
-  fpm: {fileID: 127057178}
 --- !u!1 &130479581
 GameObject:
   m_ObjectHideFlags: 0
@@ -11447,15 +11300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e6b27e676bc26448520a78be078336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materials: {fileID: 219423725}
-  materialType: 4
-  materialNameCN: "\u91D1\u6F06"
-  materialNameEN: Gold
-  materialName: 
-  amount: 0
-  inputAmount: 0
-  materialContent: {fileID: 1218165790}
-  inputContent: {fileID: 643484966}
 --- !u!114 &219423729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11468,9 +11312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5a4686cc54dc145b68f3d815528d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverScale: 1.1
-  normalScale: 1
-  scrollRect: {fileID: 0}
 --- !u!1 &219960541
 GameObject:
   m_ObjectHideFlags: 0
@@ -24530,15 +24371,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u6210\u5C31"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d3b48b2b5b03ac145b46ac56499fb36c, type: 2}
-  m_sharedMaterial: {fileID: -1573578939001427130, guid: d3b48b2b5b03ac145b46ac56499fb36c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 457fc228d584fc241aa8e964bf6ca299, type: 2}
+  m_sharedMaterial: {fileID: 4087584741080345834, guid: 457fc228d584fc241aa8e964bf6ca299, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -24555,8 +24396,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52
-  m_fontSizeBase: 52
+  m_fontSize: 92
+  m_fontSizeBase: 92
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -25057,7 +24898,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 493165191}
+  m_TargetGraphic: {fileID: 2051662090}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -25068,7 +24909,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493165188}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -31339,7 +31180,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 671700552}
+  m_TargetGraphic: {fileID: 487448156}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -31350,7 +31191,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671700549}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -31524,7 +31365,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 679033855}
+  m_TargetGraphic: {fileID: 1429569254}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -31535,7 +31376,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679033852}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -34319,15 +34160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e6b27e676bc26448520a78be078336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materials: {fileID: 760717355}
-  materialType: 1
-  materialNameCN: "\u8D1D\u5E01"
-  materialNameEN: Shell
-  materialName: 
-  amount: 0
-  inputAmount: 0
-  materialContent: {fileID: 2139452845}
-  inputContent: {fileID: 643484966}
 --- !u!114 &760717359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34340,9 +34172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5a4686cc54dc145b68f3d815528d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverScale: 1.1
-  normalScale: 1
-  scrollRect: {fileID: 0}
 --- !u!1 &761696602
 GameObject:
   m_ObjectHideFlags: 0
@@ -43362,7 +43191,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 938653714}
+  m_TargetGraphic: {fileID: 1454759936}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -43373,7 +43202,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938653711}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -46982,15 +46811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e6b27e676bc26448520a78be078336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materials: {fileID: 1005138392}
-  materialType: 0
-  materialNameCN: "\u94DC\u5E01"
-  materialNameEN: Coin
-  materialName: 
-  amount: 0
-  inputAmount: 0
-  materialContent: {fileID: 859228987}
-  inputContent: {fileID: 643484966}
 --- !u!114 &1005138396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47003,9 +46823,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5a4686cc54dc145b68f3d815528d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverScale: 1.1
-  normalScale: 1
-  scrollRect: {fileID: 0}
 --- !u!1 &1006010248
 GameObject:
   m_ObjectHideFlags: 0
@@ -54996,19 +54813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b623d1aa44a47449179b6e95308c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pages:
-  - changePage: {fileID: 1991274646}
-    page: {fileID: 1932596059}
-    labelPage: {fileID: 349894302}
-  - changePage: {fileID: 18576598}
-    page: {fileID: 761696602}
-    labelPage: {fileID: 412444504}
-  - changePage: {fileID: 451713543}
-    page: {fileID: 514267219}
-    labelPage: {fileID: 652585421}
-  - changePage: {fileID: 98485076}
-    page: {fileID: 59420814}
-    labelPage: {fileID: 907603164}
 --- !u!114 &1212615703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59743,14 +59547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cddc3cd8b984114c820bceb085dac1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  props: 
-  talismans: 
-  materials: 
-  items: 
-  targetCards: 
-  numberCards: 
-  elementCards: 
-  coins: 0
 --- !u!4 &1322043470
 Transform:
   m_ObjectHideFlags: 0
@@ -62865,7 +62661,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ef013ae7684bb7448973f56f6cd59701, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -63317,31 +63113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cf507292dab5a4ca5bf33063c34179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  languageTypes:
-  - CN
-  - EN
-  languageDisplays:
-  - "\u7B80\u4F53\u4E2D\u6587"
-  - English
-  languageDp: {fileID: 805424358}
-  lanType: 0
-  fdm: {fileID: 0}
-  inputMaterials:
-  - {fileID: 1005138395}
-  - {fileID: 760717358}
-  - {fileID: 1738071882}
-  - {fileID: 1590790717}
-  - {fileID: 219423728}
-  forgingProducts:
-  - {fileID: 165516021}
-  - {fileID: 842483190}
-  - {fileID: 339861962}
-  - {fileID: 386364025}
-  - {fileID: 1980453215}
-  - {fileID: 1863173960}
-  - {fileID: 749213406}
-  - {fileID: 1389193663}
-  sceneNameManager: {fileID: 0}
 --- !u!114 &1410140882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63399,138 +63170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b8eee2268a95e43a6650f0053c485f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapsCount: 15
-  cardsCount: 11
-  biologyCount: 0
-  propsCount: 3
-  talismansCount: 3
-  materialsCount: 4
-  itemsCount: 1
-  tarcardsCount: 5
-  numcardsCount: 9
-  elecardsCount: 5
-  arcsInf:
-  - arcIndex: 0
-    isNewGame: 1
-    arcImage: {fileID: 0}
-    arcName: 
-    arcTime: 
-    sceneIndex: 0
-    maps: []
-    unlockedCardsAmount: 0
-    unlockedBiologyAmount: 0
-    cards: []
-    biology: []
-    isAskedNpc: 0
-    props: []
-    talismans: []
-    materials: []
-    items: []
-    tarCards: []
-    numCards: []
-    eleCards: []
-    coins: 0
-  - arcIndex: 1
-    isNewGame: 1
-    arcImage: {fileID: 0}
-    arcName: 
-    arcTime: 
-    sceneIndex: 0
-    maps: []
-    unlockedCardsAmount: 0
-    unlockedBiologyAmount: 0
-    cards: []
-    biology: []
-    isAskedNpc: 0
-    props: []
-    talismans: []
-    materials: []
-    items: []
-    tarCards: []
-    numCards: []
-    eleCards: []
-    coins: 0
-  - arcIndex: 2
-    isNewGame: 1
-    arcImage: {fileID: 0}
-    arcName: 
-    arcTime: 
-    sceneIndex: 0
-    maps: []
-    unlockedCardsAmount: 0
-    unlockedBiologyAmount: 0
-    cards: []
-    biology: []
-    isAskedNpc: 0
-    props: []
-    talismans: []
-    materials: []
-    items: []
-    tarCards: []
-    numCards: []
-    eleCards: []
-    coins: 0
-  - arcIndex: 3
-    isNewGame: 1
-    arcImage: {fileID: 0}
-    arcName: 
-    arcTime: 
-    sceneIndex: 0
-    maps: []
-    unlockedCardsAmount: 0
-    unlockedBiologyAmount: 0
-    cards: []
-    biology: []
-    isAskedNpc: 0
-    props: []
-    talismans: []
-    materials: []
-    items: []
-    tarCards: []
-    numCards: []
-    eleCards: []
-    coins: 0
-  - arcIndex: 4
-    isNewGame: 1
-    arcImage: {fileID: 0}
-    arcName: 
-    arcTime: 
-    sceneIndex: 0
-    maps: []
-    unlockedCardsAmount: 0
-    unlockedBiologyAmount: 0
-    cards: []
-    biology: []
-    isAskedNpc: 0
-    props: []
-    talismans: []
-    materials: []
-    items: []
-    tarCards: []
-    numCards: []
-    eleCards: []
-    coins: 0
-  - arcIndex: 5
-    isNewGame: 1
-    arcImage: {fileID: 0}
-    arcName: 
-    arcTime: 
-    sceneIndex: 0
-    maps: []
-    unlockedCardsAmount: 0
-    unlockedBiologyAmount: 0
-    cards: []
-    biology: []
-    isAskedNpc: 0
-    props: []
-    talismans: []
-    materials: []
-    items: []
-    tarCards: []
-    numCards: []
-    eleCards: []
-    coins: 0
-  currentArcIndex: -1
 --- !u!114 &1410140886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64281,15 +63920,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u8BBE\u7F6E"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d3b48b2b5b03ac145b46ac56499fb36c, type: 2}
-  m_sharedMaterial: {fileID: -1573578939001427130, guid: d3b48b2b5b03ac145b46ac56499fb36c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 457fc228d584fc241aa8e964bf6ca299, type: 2}
+  m_sharedMaterial: {fileID: 4087584741080345834, guid: 457fc228d584fc241aa8e964bf6ca299, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -64306,8 +63945,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52
-  m_fontSizeBase: 52
+  m_fontSize: 92
+  m_fontSizeBase: 92
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -64848,15 +64487,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5F00\u59CB\u6E38\u620F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d3b48b2b5b03ac145b46ac56499fb36c, type: 2}
-  m_sharedMaterial: {fileID: -1573578939001427130, guid: d3b48b2b5b03ac145b46ac56499fb36c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 457fc228d584fc241aa8e964bf6ca299, type: 2}
+  m_sharedMaterial: {fileID: 4087584741080345834, guid: 457fc228d584fc241aa8e964bf6ca299, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -64873,8 +64512,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52
-  m_fontSizeBase: 52
+  m_fontSize: 92
+  m_fontSizeBase: 92
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -71010,15 +70649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e6b27e676bc26448520a78be078336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materials: {fileID: 1590790714}
-  materialType: 3
-  materialNameCN: "\u788E\u74E6"
-  materialNameEN: Tile
-  materialName: 
-  amount: 0
-  inputAmount: 0
-  materialContent: {fileID: 1578681264}
-  inputContent: {fileID: 643484966}
 --- !u!114 &1590790718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71031,9 +70661,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5a4686cc54dc145b68f3d815528d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverScale: 1.1
-  normalScale: 1
-  scrollRect: {fileID: 0}
 --- !u!1 &1591201559
 GameObject:
   m_ObjectHideFlags: 0
@@ -75602,18 +75229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3b5686e42b4f342a33c161d4aef487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escPanel: {fileID: 1224395823}
-  escMain: {fileID: 2037830985}
-  continueButton: {fileID: 398874963}
-  settingButton: {fileID: 339064496}
-  reMainButton: {fileID: 276551228}
-  isCanEsc: 0
-  isOpenEsc: 0
-  reMainTips: {fileID: 1620228549}
-  sure: {fileID: 827659541}
-  cancel: {fileID: 1735018889}
-  isFadeOut: 0
-  settingGameManager: {fileID: 1687684679}
 --- !u!114 &1687684679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75626,20 +75241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ac9aea9e44462438a14f1bc8586557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingPanel: {fileID: 807164914}
-  mainSetting: {fileID: 1869373212}
-  closeSettingPanel: {fileID: 1826374494}
-  key: {fileID: 376279670}
-  sound: {fileID: 244802881}
-  language: {fileID: 1940926412}
-  reb1: {fileID: 1253314969}
-  reb2: {fileID: 2048564793}
-  reb3: {fileID: 708250791}
-  keySetting: {fileID: 881149427}
-  soundSetting: {fileID: 386061283}
-  languageSetting: {fileID: 800712464}
-  esc: {fileID: 1687684677}
-  keyChangeSetting: {fileID: 881149430}
 --- !u!114 &1687684680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75652,11 +75253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb133b4f63a6164d89acbba15631d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPanel: {fileID: 232681951}
-  closeItem: {fileID: 1124629411}
-  isCanItem: 0
-  isOpenItem: 0
-  itemAmountText: {fileID: 1212615703}
 --- !u!114 &1687684682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75669,17 +75265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe8bb318214eb14c9d2cb3cb397cb62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forgingPanel: {fileID: 1378138726}
-  closeForging: {fileID: 359047622}
-  fadeImage: {fileID: 1400849615}
-  fadeInSpeed: 1.5
-  add: 1
-  isCanForging: 0
-  isOpenForging: 0
-  sprits: {fileID: 127057176}
-  cancelInput: {fileID: 127057177}
-  shopM: {fileID: 127057179}
-  fs: {fileID: 127057181}
 --- !u!114 &1687684683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78930,15 +78515,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e6b27e676bc26448520a78be078336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materials: {fileID: 1738071879}
-  materialType: 2
-  materialNameCN: "\u7AF9\u7247"
-  materialNameEN: Bamboo
-  materialName: 
-  amount: 0
-  inputAmount: 0
-  materialContent: {fileID: 1270855332}
-  inputContent: {fileID: 643484966}
 --- !u!114 &1738071883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78951,9 +78527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5a4686cc54dc145b68f3d815528d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverScale: 1.1
-  normalScale: 1
-  scrollRect: {fileID: 0}
 --- !u!1 &1738904062
 GameObject:
   m_ObjectHideFlags: 0
@@ -88729,8 +88302,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eef4d6cd8e86bc64d9b2b8cca092ada9, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ef013ae7684bb7448973f56f6cd59701, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -89578,11 +89151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ad94cc4eb5e1d4bb798e32cce0941c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmAudio:
-  - {fileID: 989385629}
-  effectsAudio: []
-  bgmSlider: {fileID: 1605963347}
-  effectsSlider: {fileID: 256404216}
 --- !u!1 &1996515359
 GameObject:
   m_ObjectHideFlags: 0
@@ -91798,15 +91366,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u9000\u51FA\u6E38\u620F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d3b48b2b5b03ac145b46ac56499fb36c, type: 2}
-  m_sharedMaterial: {fileID: -1573578939001427130, guid: d3b48b2b5b03ac145b46ac56499fb36c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 457fc228d584fc241aa8e964bf6ca299, type: 2}
+  m_sharedMaterial: {fileID: 4087584741080345834, guid: 457fc228d584fc241aa8e964bf6ca299, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -91823,8 +91391,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52
-  m_fontSizeBase: 52
+  m_fontSize: 92
+  m_fontSizeBase: 92
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
