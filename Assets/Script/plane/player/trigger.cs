@@ -2,18 +2,19 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;  // 引入 TextMeshPro 命名空间
 
 public class Collect : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private int cherry = 0;
     private Animator anim;
-    [SerializeField] private Text cherryText;
+    [SerializeField] private TextMeshProUGUI cherryText;  // 改为 TextMeshProUGUI 类型
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //收集樱桃
-        if(collision.gameObject.CompareTag("cherry"))//收集tag是cherry
+        if(collision.gameObject.CompareTag("cherry"))//tag是cherry
         {
             Destroy(collision.gameObject);
             cherry++;
