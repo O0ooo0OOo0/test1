@@ -27,21 +27,21 @@ public class JumpAbility : AbilityBase
     private bool isJumpHolding;
     private float jumpHoldTimer;
    // private bool canDoubleJump;  // 二段跳是否可用（落地时重置）
-    private bool isOnReboundPlatform;  // ✅ 添加反弹平台支持
-    private DashAbility dashAbility;  // ✅ 添加冲刺能力引用
+    private bool isOnReboundPlatform;  // 添加反弹平台支持
+    private DashAbility dashAbility;  // 添加冲刺能力引用
 
-    // ✅ 预输入相关变量
+    // 预输入相关变量
     private float jumpBufferTimer;  // 预输入计时器
     private bool isJumpBuffered;     // 是否有预输入的跳跃
 
-    private Coroutine forceCoroutine;  // 添加到类变量中????????
+    private Coroutine forceCoroutine;  // 添加到类变量中
     public override string AbilityName => "Jump";
     public bool IsInDashJumpInertia => isInDashJumpInertia;
 
     protected override void Awake()
     {
         base.Awake();
-        dashAbility = GetComponent<DashAbility>();  // ✅ 获取冲刺能力组件
+        dashAbility = GetComponent<DashAbility>();  // 获取冲刺能力组件
 
     }
 
@@ -52,7 +52,7 @@ public class JumpAbility : AbilityBase
         playerState.isGrounded = Physics2D.Raycast(transform.position, Vector2.down,
             groundCheckDistance, groundLayer);
 
-        // ✅ 预输入处理：落地时如果有缓冲的跳跃，立即执行
+        // 预输入处理：落地时如果有缓冲的跳跃，立即执行
         if (playerState.isGrounded && !wasGrounded)
         {
             if (isJumpBuffered)
@@ -63,7 +63,6 @@ public class JumpAbility : AbilityBase
                 jumpBufferTimer = 0;
             }
         }
-
 
         // 延长跳逻辑
         if (isJumpHolding && playerState.isJumping)
@@ -79,8 +78,8 @@ public class JumpAbility : AbilityBase
                 EndJumpHold();
             }
         }
+
         //  重力修改
-      
         if (!playerState.isJumping)
         {
             if (isOnReboundPlatform)
@@ -95,6 +94,7 @@ public class JumpAbility : AbilityBase
                 rb.velocity -= new Vector2(0, -Physics2D.gravity.y * gravityMultiplier * Time.fixedDeltaTime);
             }
         }
+
         // 更新预输入计时器
         if (isJumpBuffered)
         {
@@ -111,7 +111,7 @@ public class JumpAbility : AbilityBase
         if (Input.GetKeyDown(activationKey))
         {
             //TryJump();
-            // ✅ 记录跳跃预输入
+            // 记录跳跃预输入
             TryBufferJump();
         }
 
@@ -121,10 +121,10 @@ public class JumpAbility : AbilityBase
         }
     }
 
-    // ✅ 预输入跳跃逻辑
+    // 预输入跳跃逻辑
     void TryBufferJump()
     {
-        // ✅ 冲刺跳：在冲刺状态下的跳跃
+        // 冲刺跳：在冲刺状态下的跳跃
         if (dashAbility != null && dashAbility.IsDashing && playerState.isGrounded)
         {
            
@@ -143,7 +143,7 @@ public class JumpAbility : AbilityBase
         {
             isJumpBuffered = true;
             jumpBufferTimer = jumpBufferTime;
-            Debug.Log($"预输入记录，将在 {jumpBufferTime} 秒内落地触发");
+            //Debug.Log($"预输入记录，将在 {jumpBufferTime} 秒内落地触发");
         }
     }
 
@@ -200,7 +200,7 @@ public class JumpAbility : AbilityBase
         jumpHoldTimer = 0;
 
         dashAbility.EndDash();
-        // 7. ✅ 开始持续施加水平力（随衰减时间慢慢减弱）
+        // 7. 开始持续施加水平力（随衰减时间慢慢减弱）
         StartCoroutine(ApplyDashJumpForce(horizontalSpeed, dashJumpDecayTime));
         // 5. 结束冲刺
         //dashAbility.EndDash();
@@ -224,7 +224,7 @@ public class JumpAbility : AbilityBase
             //float t = elapsedTime / decayTime;
             //currentForce = Mathf.Lerp(initialSpeed, targetForce, t);
 
-            // ✅ 非线性衰减：使用 SmoothStep 曲线（先快后慢）
+            // 非线性衰减：使用 SmoothStep 曲线（先快后慢）
             float t = elapsedTime / decayTime;
 
             // 方法2：使用指数衰减（更自然的物理感）
@@ -242,9 +242,9 @@ public class JumpAbility : AbilityBase
 
         // 惯性结束
         isInDashJumpInertia = false;
-        Debug.Log($"冲刺跳力衰减结束，最终速度: {rb.velocity}");
+        //Debug.Log($"冲刺跳力衰减结束，最终速度: {rb.velocity}");
     }
-    // ✅ 使用 Unity 自带的碰撞检测（最简单）
+    // 使用 Unity 自带的碰撞检测（最简单）
     void OnCollisionEnter2D(Collision2D collision)
     {
         // 检查是否碰到 ground 图层的物体
@@ -266,7 +266,7 @@ public class JumpAbility : AbilityBase
                 // 可选：保留一些速度，不会完全停止
                 // rb.velocity = new Vector2(rb.velocity.x * 0.5f, rb.velocity.y);
 
-                Debug.Log($"碰到地面/墙壁，冲刺跳惯性停止");
+                //Debug.Log($"碰到地面/墙壁，冲刺跳惯性停止");
             }
         }
     }
@@ -276,7 +276,7 @@ public class JumpAbility : AbilityBase
         return ((layerMask.value & (1 << obj.layer)) != 0);
     }
 
-    // ✅ 恢复阻尼的方法
+    // 恢复阻尼的方法
     void ResetDashJumpDrag()
     {
         rb.drag = 0f;

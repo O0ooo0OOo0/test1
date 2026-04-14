@@ -11,7 +11,7 @@ public class AbilityManage : MonoBehaviour
     public bool hasIceAbility = false;
     public bool hasFireAbility = false;
 
-    private Dictionary<System.Type, AbilityBase> abilities = new Dictionary<System.Type, AbilityBase>();
+    private Dictionary<System.Type, AbilityBase> abilities = new();
 
     void Awake()
     {
