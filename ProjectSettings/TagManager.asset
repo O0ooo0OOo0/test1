@@ -20,6 +20,7 @@ TagManager:
   - trap
   - cherry
   - Card_DoubleJump
+  - cs
   layers:
   - Default
   - TransparentFX

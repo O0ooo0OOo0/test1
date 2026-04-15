@@ -13,6 +13,7 @@ public class RoundManager : MonoBehaviour
     // 调用其他脚本
     public APManager ap;
     public RecordAction recordAction;
+    public RefreshCombatCardsManager refreshCombatCardsManager;
 
     void Start()
     {
@@ -25,7 +26,6 @@ public class RoundManager : MonoBehaviour
         {
             next.onClick.AddListener(TurnEnemy);
         }
-        
     }
 
     public void TurnEnemy()
@@ -41,6 +41,7 @@ public class RoundManager : MonoBehaviour
         recordAction.Initial();
         next.interactable = true;
         currentbout++;
+        refreshCombatCardsManager.ResetTimes(currentbout);
         RoundText();
     }
 

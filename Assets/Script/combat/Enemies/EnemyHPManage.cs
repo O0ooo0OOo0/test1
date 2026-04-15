@@ -6,7 +6,8 @@ public class EnemyHPManager : MonoBehaviour
 {
     public int maxHealth = 100; // 最大血量
     public int currentHealth; // 当前血量
-    public Image healthBar; // 血量条（UI）
+    public GameObject hbar;
+    private Image healthBar; // 血量条（UI）
     public GameObject HP;
     public TMP_Text healthText;
 
@@ -14,6 +15,7 @@ public class EnemyHPManager : MonoBehaviour
 
     private void Start()
     {
+        healthBar = hbar.GetComponent<Image>();
         HP.SetActive(true);
         currentHealth = maxHealth;
         UpdateHealthBar();

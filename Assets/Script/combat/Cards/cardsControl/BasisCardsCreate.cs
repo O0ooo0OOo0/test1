@@ -14,7 +14,7 @@ public class BasisCardsCreate : MonoBehaviour
     }
 
     public List<CardInfo> cardDeckInfo; // 合并后的牌组信息
-    public Transform[] cardPositions;   // 定义五个固定位置的Transform
+    public Transform[] cardPositions;   // 固定位置的Transform
     public float fadeDuration = 1.0f;  // 渐显渐隐的持续时间
 
     void Start()
@@ -72,6 +72,7 @@ public class BasisCardsCreate : MonoBehaviour
         cardImage.color = new Color(cardImage.color.r, cardImage.color.g, cardImage.color.b, 1);
     }
 
+    // 牌使用后生成新牌
     public void ReplaceCardAt(int index)
     {
         if (index < 0 || index >= cardPositions.Length)
