@@ -3881,7 +3881,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &67044481
 RectTransform:
@@ -33947,6 +33947,7 @@ GameObject:
   - component: {fileID: 599314605}
   - component: {fileID: 599314604}
   - component: {fileID: 599314608}
+  - component: {fileID: 599314609}
   - component: {fileID: 599314592}
   - component: {fileID: 599314603}
   - component: {fileID: 599314602}
@@ -34346,6 +34347,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainSceneName: main
+--- !u!114 &599314609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599314590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b93cd2e6dc8c854cb16029e8e9c72d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combat_2_1_Position: {x: -2.55, y: 0}
 --- !u!1 &601383787
 GameObject:
   m_ObjectHideFlags: 0
@@ -51808,7 +51822,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!1 &943482848
 GameObject:
