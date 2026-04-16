@@ -57,7 +57,7 @@ public abstract class AbilityBase : MonoBehaviour, IAbility
         isAvailable = false;
     }
 
-    // ✅ 实现接口的 UpdateCooldown 方法
+    // 实现接口的 UpdateCooldown 方法
     public virtual void UpdateCooldown()
     {
         if (!isAvailable && Time.time >= nextUseTime)

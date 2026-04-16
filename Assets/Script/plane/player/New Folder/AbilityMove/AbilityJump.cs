@@ -34,14 +34,14 @@ public class JumpAbility : AbilityBase
     private float jumpBufferTimer;  // 预输入计时器
     private bool isJumpBuffered;     // 是否有预输入的跳跃
 
-    private Coroutine forceCoroutine;  // 添加到类变量中????????
+    private Coroutine forceCoroutine;  // 添加到类变量中?
     public override string AbilityName => "Jump";
     public bool IsInDashJumpInertia => isInDashJumpInertia;
 
     protected override void Awake()
     {
         base.Awake();
-        dashAbility = GetComponent<DashAbility>();  // ✅ 获取冲刺能力组件
+        dashAbility = GetComponent<DashAbility>();  //获取冲刺能力组件
 
     }
 
@@ -52,7 +52,7 @@ public class JumpAbility : AbilityBase
         playerState.isGrounded = Physics2D.Raycast(transform.position, Vector2.down,
             groundCheckDistance, groundLayer);
 
-        // ✅ 预输入处理：落地时如果有缓冲的跳跃，立即执行
+        //预输入处理：落地时如果有缓冲的跳跃，立即执行
         if (playerState.isGrounded && !wasGrounded)
         {
             if (isJumpBuffered)
@@ -70,7 +70,7 @@ public class JumpAbility : AbilityBase
         {
             if (jumpHoldTimer < jumpHoldTime)
             {
-                // 原代码: rb.velocity += new Vector2(0, -Physics2D.gravity.y * Time.deltaTime);
+                // rb.velocity += new Vector2(0, -Physics2D.gravity.y * Time.deltaTime);
                 rb.velocity += new Vector2(0, -Physics2D.gravity.y * Time.fixedDeltaTime);
                 jumpHoldTimer += Time.fixedDeltaTime;
             }
@@ -85,13 +85,12 @@ public class JumpAbility : AbilityBase
         {
             if (isOnReboundPlatform)
             {
-                // 在反弹平台上，什么都不做，让物理引擎自然处理重力
-                // rb.velocity 会被物理引擎正常改变
+                // 在反弹平台上，自然处理重力
             }
             else
             {
-                // 正常情况下的强制重力修改
-                // 原代码: rb.velocity -= new Vector2(0, -Physics2D.gravity.y * 2 * Time.deltaTime);
+                // 
+                //  rb.velocity -= new Vector2(0, -Physics2D.gravity.y * 2 * Time.deltaTime);
                 rb.velocity -= new Vector2(0, -Physics2D.gravity.y * gravityMultiplier * Time.fixedDeltaTime);
             }
         }
@@ -111,7 +110,7 @@ public class JumpAbility : AbilityBase
         if (Input.GetKeyDown(activationKey))
         {
             //TryJump();
-            // ✅ 记录跳跃预输入
+            //记录跳跃预输入
             TryBufferJump();
         }
 
@@ -121,10 +120,10 @@ public class JumpAbility : AbilityBase
         }
     }
 
-    // ✅ 预输入跳跃逻辑
+    // 预输入
     void TryBufferJump()
     {
-        // ✅ 冲刺跳：在冲刺状态下的跳跃
+        // 冲刺跳
         if (dashAbility != null && dashAbility.IsDashing && playerState.isGrounded)
         {
            
@@ -143,7 +142,7 @@ public class JumpAbility : AbilityBase
         {
             isJumpBuffered = true;
             jumpBufferTimer = jumpBufferTime;
-            Debug.Log($"预输入记录，将在 {jumpBufferTime} 秒内落地触发");
+            Debug.Log($"预输入记录，在 {jumpBufferTime} 秒内落地触发");
         }
     }
 

@@ -45,16 +45,14 @@ public class AreaDisplayOnArrival : MonoBehaviour
         if (canvasGroup == null)
             canvasGroup = areaNamePanel.gameObject.AddComponent<CanvasGroup>();
 
-        // 获取Text组件
+        // 获取Text
         areaText = areaNamePanel.GetComponentInChildren<TextMeshProUGUI>();
 
         // 初始状态：透明
         canvasGroup.alpha = 0f;
 
-        // 确保面板是激活的（这样才能显示）
+        // 确保面板激活
         areaNamePanel.SetActive(true);
-
-        Debug.Log("UI初始化完成，面板保持激活但透明");
     }
 
     // 玩家进入触发区域时显示地名
