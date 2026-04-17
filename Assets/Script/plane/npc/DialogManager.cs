@@ -102,7 +102,7 @@ public class DialogManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("请指定对话JSON文件！");
+            Debug.LogError("未指定对话JSON文件");
         }
     }
 
@@ -265,7 +265,7 @@ public class DialogManager : MonoBehaviour
         // 如果是选项对话，直接返回
         if (currentDialog.isChoice) return;
 
-        // 一行代码解决：如果当前句子正在打字，不执行下一句 
+        // 如果当前句子正在打字，不执行下一句 
         if (dialogText.text != currentDialog.sentences[currentSentenceIndex].text) return;
 
         if (!isDialogActive || 
