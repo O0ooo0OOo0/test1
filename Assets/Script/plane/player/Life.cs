@@ -6,7 +6,7 @@ public class Life : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
     public  Vector2 pos;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -26,11 +26,8 @@ public class Life : MonoBehaviour
     {
         anim.SetTrigger("die");
         
-        
-
         rb.bodyType = RigidbodyType2D.Static;
         Restart();
-
     }
 
    
@@ -40,10 +37,5 @@ public class Life : MonoBehaviour
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         transform.position = pos ;
         rb.bodyType = RigidbodyType2D.Dynamic ;//变回运动状态
-    }
-    // Update is called once per frame
-    void Update()
-    {
- 
     }
 }

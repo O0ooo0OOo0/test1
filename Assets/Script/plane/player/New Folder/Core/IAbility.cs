@@ -11,6 +11,7 @@ public interface IAbility
     void UpdateCooldown();
     void Reset();
 }
+
 // AbilityBase.cs - 能力基类
 public abstract class AbilityBase : MonoBehaviour, IAbility
 {
@@ -22,8 +23,6 @@ public abstract class AbilityBase : MonoBehaviour, IAbility
     protected float nextUseTime;
     protected PlayerState playerState;
     protected Rigidbody2D rb;
-
-
 
     public abstract string AbilityName { get; }
    
@@ -49,6 +48,7 @@ public abstract class AbilityBase : MonoBehaviour, IAbility
             Use();
         }
     }
+
     // 实现接口的 Use 方法
     public virtual void Use()
     {
@@ -74,5 +74,4 @@ public abstract class AbilityBase : MonoBehaviour, IAbility
         isAvailable = true;
         nextUseTime = 0;
     }
-
 }

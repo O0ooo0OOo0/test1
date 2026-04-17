@@ -13,7 +13,7 @@ public class DashAbility : AbilityBase
     private float dashTimer;
     private Vector2 dashDirection;
     private float currentDashSpeed;  // 记录当前冲刺速度
-    private float originalGravityScale;  // ✅ 保存原始重力
+    private float originalGravityScale;  // 保存原始重力
 
     public override string AbilityName => "Dash";
     public bool IsDashing => isDashing;
@@ -21,7 +21,7 @@ public class DashAbility : AbilityBase
     protected override void Awake()
     {
         base.Awake();
-        originalGravityScale = rb.gravityScale;  // ✅ 保存原始重力
+        originalGravityScale = rb.gravityScale;  // 保存原始重力
     }
 
     protected override void Update()
@@ -34,7 +34,7 @@ public class DashAbility : AbilityBase
         }
     }
 
-    // ✅ 获取冲刺速度（用于冲刺跳）
+    // 获取冲刺速度（用于冲刺跳）
     public float GetDashSpeed()
     {
         return currentDashSpeed > 0 ? currentDashSpeed : dashSpeed;
@@ -50,14 +50,14 @@ public class DashAbility : AbilityBase
         }
         else
         {
-            // ✅ 冲刺时设置重力为0
+            // 冲刺时设置重力为0
             rb.gravityScale = 0f;
 
 
 
-            // ✅ 关键：如果是水平冲刺，锁定垂直速度为0
+            // 关键：如果是水平冲刺，锁定垂直速度为0
             if (dashDirection != Vector2.down)
-            {            // ✅ 改为叠加速度，而不是覆盖
+            {            // 改为叠加速度，而不是覆盖
                 float targetSpeed = dashDirection.x * dashSpeed;
                 float newVelocityX = Mathf.MoveTowards(rb.velocity.x, targetSpeed, dashAcceleration * Time.deltaTime);
              
@@ -74,7 +74,7 @@ public class DashAbility : AbilityBase
 
             currentDashSpeed = dashSpeed;
 
-            rb.gravityScale = 0f;// ✅ 冲刺时：设置重力为0，不受重力影响
+            rb.gravityScale = 0f;// 冲刺时：设置重力为0，不受重力影响
         }
     }
 
@@ -100,15 +100,15 @@ public class DashAbility : AbilityBase
         isDashing = true;
         dashTimer = dashDuration;
         playerState.isDashing = true;
-        currentDashSpeed = dashSpeed;  // ✅ 设置当前冲刺速度
+        currentDashSpeed = dashSpeed;  // 设置当前冲刺速度
     }
 
     public void EndDash()
     {
         isDashing = false;
         playerState.isDashing = false;
-        currentDashSpeed = 0;  // ✅ 重置冲刺速度
-        // ✅ 冲刺结束：恢复重力
+        currentDashSpeed = 0;  // 重置冲刺速度
+        // 冲刺结束：恢复重力
             rb.gravityScale = originalGravityScale;
 
     }

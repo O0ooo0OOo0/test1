@@ -25,6 +25,8 @@ public class ArchiveGameManager : MonoBehaviour
 
         // 玩家信息
         public int sceneIndex;   // 场景序列号
+        public int canUseTalismansAmount;   // 可以同时使用的护符的数量
+        public int refreshCombatCardsTimes;   // 可以刷新战斗牌的次数
 
         // 地图信息
         public List<MapInformation> maps;
@@ -83,6 +85,7 @@ public class ArchiveGameManager : MonoBehaviour
     {
         public int talismanId;
         public int talismanAmount;
+        public bool isUsed;   // 护符是否被使用
     }
     [System.Serializable]
     public struct MaterialsInf   // 锻造材料
@@ -300,6 +303,8 @@ public class ArchiveGameManager : MonoBehaviour
 
         // 玩家信息
         arc.sceneIndex = 0;
+        arc.canUseTalismansAmount = 1;
+        arc.refreshCombatCardsTimes = 1;
 
         // 地图信息
         for (int i = 0; i < arc.maps.Count; i++)

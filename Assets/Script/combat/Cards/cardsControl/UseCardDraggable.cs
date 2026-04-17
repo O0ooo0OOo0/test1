@@ -12,42 +12,50 @@ public class UseCardDraggable : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     private Vector3 originalPosition; // 这个变量将存储鼠标点击开始拖拽时的位置
     private float smoothSpeed = 100.0f;
 
+    public bool isNeedTarget;
+    public bool isNeedNumber;
+    public bool isNeedElement;
+
     public bool istarget;
     public bool isnumber;
     public bool iselement;
 
     public bool isCanDrag;
-    public GameObject panel;
+    public bool isCanRefresh;
+    public GameObject cards_panel, items_panel;
 
-    public Backage backage;
+    // 调用其他脚本
+    public CardsBackage cardsBackage;
+    public ItemsBackage itemsBackage;
     public APManager ap;
 
     void Start()
     {
         isCanDrag = false;
+        isCanRefresh = true;
         originalPosition = transform.position;
     }
 
     void Update()
     {
         IsTextFull();
-        if (istarget && isnumber && iselement && backage.isOpenBackage == false && ap.currentValue > 0)
-        {
-            isCanDrag = true;
-        }
-        else
-        {
-            isCanDrag = false;
-        }
+        JudgeDrag();
+        JudgeRefresh();
     }
 
-    // 检测所有缺失内容是否已经补充完整
+    // 检测是否存在缺失内容及所有缺失内容是否已经补充完整
     public void IsTextFull()
     {
         var target = transform.GetComponentsInChildren<TMPro.TextMeshProUGUI>(true).FirstOrDefault(t => t.CompareTag("target"));
         var number = transform.GetComponentsInChildren<TMPro.TextMeshProUGUI>(true).FirstOrDefault(n => n.CompareTag("number"));
         var element = transform.GetComponentsInChildren<TMPro.TextMeshProUGUI>(true).FirstOrDefault(e => e.CompareTag("element"));
 
+        // 检测是否需要内容
+        isNeedTarget = target;
+        isNeedNumber = number;
+        isNeedElement = element;
+
+        // 检测内容是否完整
         if (target == false)
         {
             istarget = true;
@@ -88,9 +96,35 @@ public class UseCardDraggable : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         }
     }
 
+    // 判断卡牌是否可被拖动
+    public void JudgeDrag()
+    {
+        if (istarget && isnumber && iselement && cardsBackage.isOpenCardsBackage == false && itemsBackage.isOpenItemsBackage == false && ap.currentValue > 0)
+        {
+            isCanDrag = true;
+        }
+        else
+        {
+            isCanDrag = false;
+        }
+    }
+
+    // 判断卡牌是否可被刷新
+    public void JudgeRefresh()
+    {
+        if ((isNeedTarget && istarget) || (isNeedNumber && isnumber) || (isNeedElement && iselement) || ap.currentValue == 0)
+        {
+            isCanRefresh = false;
+        }
+        else
+        {
+            isCanRefresh = true;
+        }
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (isCanDrag == false || panel.activeInHierarchy)
+        if (isCanDrag == false || cards_panel.activeInHierarchy || items_panel.activeInHierarchy)
         {
             return;
         }

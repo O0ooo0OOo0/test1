@@ -12,11 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/StartVideo.unity
     guid: cdcabbdd7e2a92648891ebc970a4d061
   - enabled: 1
-    path: Assets/Scenes/One/plane/1-1.unity
-    guid: 04d8f73ff4867454fa450d57e5b0fae0
+    path: Assets/Scenes/B_One/plane/1-1.unity
+    guid: 22d0a5d6ac8eb204c8f409ebfc2edfdd
   - enabled: 1
-    path: Assets/Scenes/A_Prologue/combatExample.unity
-    guid: d3231a0c9d6311146a9da0808110b2f1
+    path: Assets/Scenes/C_Two/combat/combat_2_1.unity
+    guid: 7ff3e305d024d644983eb64210a118eb
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 0e17a160d82c5ed4f8bba348ef13d101, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 84250f955874ba841a40e21e96edbd98, type: 3}
