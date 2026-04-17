@@ -28,7 +28,7 @@ public class RefreshCombatCardsManager : MonoBehaviour
     public void InitializedTimes()
     {
         times = ArchiveGameManager.arcm.arcsInf[ArchiveGameManager.arcm.currentArcIndex].refreshCombatCardsTimes;
-        timesText.text = "*" + times.ToString();
+        timesText.text = "*" + times.ToString();    
     }
 
     // 消耗刷新次数并刷新
@@ -38,8 +38,8 @@ public class RefreshCombatCardsManager : MonoBehaviour
         {
             times--;
             timesText.text = "*" + times.ToString();
+            RefreshCombatCards();
         }
-        RefreshCombatCards();
     }
 
     // 刷新战斗牌

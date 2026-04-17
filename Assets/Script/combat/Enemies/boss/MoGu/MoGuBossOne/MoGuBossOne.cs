@@ -102,7 +102,7 @@ public class MoGuBossOne : MonoBehaviour
             }
         }
         
-        bavm.GetBossActionValue(attackValue, defenseValue, dodgeValue, othersValue, isUnknow);
+        bavm.GetBossActionValue(attackValue, defenseValue, dodgeValue, othersValue, isUnknow);   // 传递boss行为参数
     }
 
     // 执行Boss行为（在boss的行动回合进行boss行为）
